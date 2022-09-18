@@ -1,0 +1,20 @@
+[package]
+name = "graphql-benchmark"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+graphql-parser = "0.4.0"
+async-graphql-parser = "4.0.13"
+apollo-parser = "0.2"
+apollo-parser-02 = { git = "https://github.com/allancalix/apollo-rs", rev = "d112d515c1d1737b71b968ea9b96a170ab3b026f" }
+
+[dev-dependencies]
+criterion = "0.4.0"
+
+[[bench]]
+name = "benches"
+path = "benches/benches.rs"
+harness = false
