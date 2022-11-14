@@ -8,8 +8,8 @@ edition = "2021"
 [dependencies]
 graphql-parser = "0.4.0"
 async-graphql-parser = "4.0.13"
-apollo-parser = "0.2"
-apollo-parser-02 = { git = "https://github.com/allancalix/apollo-rs", rev = "d112d515c1d1737b71b968ea9b96a170ab3b026f" }
+apollo-parser = "0.3"
+apollo-parser-02 = { package = "apollo-parser", git = "https://github.com/allancalix/apollo-rs", rev = "186e21c7b51a37d2f8231affcc7d116186873927" }
 
 [dev-dependencies]
 criterion = "0.4.0"
