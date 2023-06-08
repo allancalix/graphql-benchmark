@@ -6,10 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+bluejay-parser = "0.1.0-alpha.4"
 graphql-parser = "0.4.0"
-async-graphql-parser = "4.0.13"
-apollo-parser = "0.3"
-apollo-parser-02 = { package = "apollo-parser", git = "https://github.com/allancalix/apollo-rs", rev = "186e21c7b51a37d2f8231affcc7d116186873927" }
+async-graphql-parser = "5.0.10"
+apollo-parser = "0.5.3"
+apollo-parser-02 = { package = "apollo-parser", git = "https://github.com/allancalix/apollo-rs", rev = "2a2240c4f82b10767c33babf070454e2b378fdb7" }
 
 [dev-dependencies]
 criterion = "0.4.0"

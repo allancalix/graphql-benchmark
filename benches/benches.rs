@@ -4,6 +4,11 @@ fn async_graphql_parser<'a>(query: &'a str) {
     async_graphql_parser::parse_query(query).unwrap();
 }
 
+fn bluejay_parser<'a>(query: &'a str) {
+    use bluejay_parser::ast::executable::ExecutableDocument;
+    ExecutableDocument::parse(black_box(query)).unwrap();
+}
+
 fn graphql_parser<'a>(query: &'a str) {
     graphql_parser::query::parse_query::<&'a str>(query).unwrap();
 }
@@ -32,6 +37,7 @@ fn bench_parser_simple(c: &mut Criterion) {
     c.bench_function("async_graphql_parser", move |b| b.iter(|| async_graphql_parser(query)));
     c.bench_function("apollo_graphql_parser", move |b| b.iter(|| apollo_parser(query)));
     c.bench_function("apollo_fork_graphql_parser", move |b| b.iter(|| apollo_2_parser(query)));
+    c.bench_function("bluejay_parser", move |b| b.iter(|| bluejay_parser(query)));
     c.bench_function("graphql_parser", move |b| b.iter(|| graphql_parser(query)));
 }
 
@@ -41,6 +47,7 @@ fn bench_parser_convoluted(c: &mut Criterion) {
     c.bench_function("async_graphql_parser", move |b| b.iter(|| async_graphql_parser(query)));
     c.bench_function("apollo_graphql_parser", move |b| b.iter(|| apollo_parser(query)));
     c.bench_function("apollo_fork_graphql_parser", move |b| b.iter(|| apollo_2_parser(query)));
+    c.bench_function("bluejay_parser", move |b| b.iter(|| bluejay_parser(query)));
     c.bench_function("graphql_parser", move |b| b.iter(|| graphql_parser(query)));
 }
 
